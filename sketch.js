@@ -31,11 +31,7 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	var packageBody_options={
-		restitution: 3.0
-	}
-
-	packageBody = Bodies.circle(width/2 , 200 , 5 , {packageBody_options, isStatic:true});
+	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution: 0.6, isStatic:true});
 	World.add(world, packageBody);
 
 	//Create a Ground
@@ -62,6 +58,3 @@ function keyPressed() {
     Matter.Body.setStatic(packageBody,false);
   }
 }
-
-
-
